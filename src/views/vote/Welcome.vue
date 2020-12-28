@@ -58,7 +58,7 @@ export default {
     Footer,
   },
   created() {
-    document.title = "PEMIRA FMIPA UNS 2020";
+    document.title = "PEMIRA FPP UNDIP 2021";
   },
 };
 </script>
