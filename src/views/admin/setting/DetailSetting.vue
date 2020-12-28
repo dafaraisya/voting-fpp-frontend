@@ -20,7 +20,7 @@
           <br />
           <h3>Prosedur</h3>
           <a
-            v-bind:href="'http://localhost/procedure.pdf'"
+            v-bind:href="'http://pemira.fppundip.com/procedure.pdf'"
             class="btn btn-primary"
           >
             <i class="far fa-file-alt text-white"></i>
@@ -143,7 +143,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://localhost:3000/api/v1/setting/all")
+      .get("http://pemira.fppundip.com:3000/api/v1/setting/all")
       .then((res) => (this.detail = res.data.data[0]))
       .catch((err) => console.log(err));
   },
