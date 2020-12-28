@@ -125,7 +125,7 @@ export default {
         },
         getImage(url) {
             console.log()
-            return 'http://pemira.fppundip.com/images/'+url;
+            return 'http://pemira.fppundip.com:3000/images/'+url;
         }
     },
     mounted() {
