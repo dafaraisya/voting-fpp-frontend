@@ -70,7 +70,7 @@ export default {
           type: "bar",
         },
         title: {
-          text: "Hasil Perhitungan Suara PEMIRA FMIPA UNS 2020",
+          text: "Hasil Perhitungan Suara PEMIRA FPP UNDIP 2021",
         },
         xAxis: {
           categories: ["oke", "oke2", "oke3"],
