@@ -12,7 +12,7 @@
                     <div v-html="detail.description.vision"/>
                     <b>Misi</b>
                     <div v-html="detail.description.mission"/><br/>
-                    <a v-bind:href="'http://localhost/'+this.$route.params.id+'.pdf'">
+                    <a v-bind:href="'http://pemira.fppundip.com/'+this.$route.params.id+'.pdf'">
                         <b-button class="ml-2" href="" variant="primary">
                             <i class="far fa-file-alt text-white"></i>
                             CV
@@ -60,7 +60,7 @@ export default {
             }).then((result) => {
                 if (result.isConfirmed) {            
                     axios
-                        .delete("http://localhost:3000/api/v1/candidate/"+this.$route.params.id)
+                        .delete("http://pemira.fppundip.com:3000/api/v1/candidate/"+this.$route.params.id)
                         .then(() => {
                             Swal.fire({
                                 icon: 'success',
