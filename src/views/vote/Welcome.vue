@@ -14,7 +14,7 @@
               </span>
             </div>
             <b-container class="mt-5">
-              <router-link class="mt-5" :to="{ name: 'Method' }">
+              <router-link class="mt-5" :to="{ name: 'Upload' }">
                 <b-button class="btn mt-5">
                   <i class="fas fa-vote-yea"></i>
                   Vote

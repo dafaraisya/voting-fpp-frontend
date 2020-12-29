@@ -1,6 +1,6 @@
 <template>
   <div class="upload page pt-4">
-    <h1 class="text-white tittle">Unggah kartu</h1>
+    <h1 class="text-white tittle">Unggah Kartu Yang <br> Telah Kami Kirimkan Melalui Email</h1>
     <div class="scanner-card mt-5">
       <b-row>
         <b-col sm="3" />
