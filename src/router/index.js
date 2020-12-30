@@ -61,9 +61,7 @@ const routes = [
     component: HomeAdmin,
     beforeEnter: (to, from, next) => {
       if (store.state.authenticated == false) {
-        next({
-          name : 'login'
-        });
+        next();
         // var ip = [
         //   "36.81.8.39",
         //   "115.178.245.1",

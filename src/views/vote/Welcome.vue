@@ -8,9 +8,9 @@
             <h1>PEMIRA FPP UNDIP 2020</h1>
             <div class="inner">
               <span>
-                #fppmemilih<br />
-                #suarafpp<br />
-                #suksespemira2020
+                #FPPMemilih<br />
+                #suaraFPP<br />
+                #SuksesPEMIRA2020
               </span>
             </div>
             <b-container class="mt-5">
