@@ -5,9 +5,9 @@
 </template>
 <script>
 export default {
-  title: 'PEMIRA FPP UNDIP 2021',
+  title: 'PEMIRA FPP UNDIP 2020',
   metaInfo: {
-    title: 'PEMIRA FPP UNDIP 2021'
+    title: 'PEMIRA FPP UNDIP 2020'
   }
 }
 </script>

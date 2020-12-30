@@ -13,6 +13,17 @@
         Tambah peserta
       </b-button>
     </router-link>
+    <b-dropdown class="dropdown" id="dropdown" right text="Tampil Berdasarkan" variant="outline-primary" >
+      <b-dropdown-item @click="showAll()">Semua Peserta</b-dropdown-item>
+      <b-dropdown-item @click="emailSent()">Peserta yang Sudah DiKirim Email</b-dropdown-item>
+      <b-dropdown-item @click="emailNotSent()">Peserta yang Belum Dikirim Email</b-dropdown-item>
+      <b-dropdown-item @click="alreadyVoted()">Peserta yang Sudah Memilih</b-dropdown-item>
+      <b-dropdown-item @click="haventVoted()">Peserta yang Belum Memilih</b-dropdown-item>
+    </b-dropdown>
+    <!-- <label><input type="radio" value="all"  v-model="gender" checked> All</label>
+    <label><input type="radio" value="male" v-model="gender"> Male</label>
+    <label><input type="radio" value="female" v-model="gender"> Female</label>
+    <br/> -->
     <div v-if="keyword != ''">
       <b-container
         v-if="searchParticipants.length == 0 && searchLoading == 0"
@@ -64,7 +75,7 @@
     <div v-else>
       <div
         class="bg-white mt-2 p-3 shadow-sm rounded"
-        v-for="participant in participants"
+        v-for="participant in sortedParticipants"
         :key="participant._id"
       >
         <div>
@@ -130,6 +141,7 @@ export default {
   data() {
     return {
       participants: [],
+      sortedParticipants: [],
       searchParticipants: [],
       searchLoading: 0,
       keyword: "",
@@ -137,6 +149,35 @@ export default {
     };
   },
   methods: {
+    showAll: function() {
+      this.sortedParticipants = this.participants.filter(function(participant) {
+        return participant;
+      })
+    },
+    emailSent: function() {
+      this.sortedParticipants = this.participants.filter(function (participant) {
+        return participant.email_at != null;
+      })
+      
+    },
+    emailNotSent: function() {
+      this.sortedParticipants = this.participants.filter(function (participant) {
+        return participant.email_at == null;
+      })
+    },
+    alreadyVoted: function() {
+      this.sortedParticipants = this.participants.filter(function (participant) {
+        return participant.voting != null;
+      })
+    },
+    haventVoted: function() {
+      this.sortedParticipants = this.participants.filter(function (participant) {
+        return participant.voting == null;
+      })
+    },
+    // display() {
+    //   console.log(this.emailSent);
+    // },
     moment: function(date) {
       return moment(date);
     },
@@ -261,15 +302,27 @@ export default {
       )
       .then((res) => {
         this.participants = res.data.data.participants;
+        this.sortedParticipants = this.participants;
         this.totalPage = res.data.data.totalPage;
       })
       .catch((error) => console.log(error));
   },
+  computed : {
+    EmailTerkirim: function() {
+      return this.participants.filter(function (participant) {
+        return participant.voting == null;
+      })
+    }
+  }
 };
 </script>
 <style>
 .dot {
   margin-bottom: 4px;
   font-size: 14px;
+}
+.dropdown {
+  margin-left: 610px;
+  margin-top: -10px;
 }
 </style>

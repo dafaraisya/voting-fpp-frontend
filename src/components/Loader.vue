@@ -9,7 +9,7 @@
           <b-container class="name">
             <h4 class="title text-white">
               PEMIRA FPP <br />
-              UNDIP 2021
+              UNDIP 2020
             </h4>
             <div class="loader"></div>
           </b-container>

@@ -5,12 +5,12 @@
       <b-container class="container h-100 text-white">
         <b-row class="row h-100 justify-content-center align-items-center">
           <b-col lg="12">
-            <h1>PEMIRA FPP UNDIP 2021</h1>
+            <h1>PEMIRA FPP UNDIP 2020</h1>
             <div class="inner">
               <span>
                 #fppmemilih<br />
                 #suarafpp<br />
-                #suksespemira2021
+                #suksespemira2020
               </span>
             </div>
             <b-container class="mt-5">
@@ -58,7 +58,7 @@ export default {
     Footer,
   },
   created() {
-    document.title = "PEMIRA FPP UNDIP 2021";
+    document.title = "PEMIRA FPP UNDIP 2020";
   },
 };
 </script>
