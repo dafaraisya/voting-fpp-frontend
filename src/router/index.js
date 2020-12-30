@@ -49,6 +49,7 @@ export const store = new Vuex.Store({
   },
 });
 
+const currentLoggedIn = sessionStorage.getItem('isAuth');
 const routes = [
   {
     path: "/login",
@@ -60,8 +61,8 @@ const routes = [
     name: "admin",
     component: HomeAdmin,
     beforeEnter: (to, from, next) => {
-      if (store.state.authenticated == false) {
-        next();
+      if (store.state.authenticated == false && !currentLoggedIn) {
+        next({name:'login'});
         // var ip = [
         //   "36.81.8.39",
         //   "115.178.245.1",

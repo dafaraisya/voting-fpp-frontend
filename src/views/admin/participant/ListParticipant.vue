@@ -306,13 +306,6 @@ export default {
         this.totalPage = res.data.data.totalPage;
       })
       .catch((error) => console.log(error));
-  },
-  computed : {
-    EmailTerkirim: function() {
-      return this.participants.filter(function (participant) {
-        return participant.voting == null;
-      })
-    }
   }
 };
 </script>

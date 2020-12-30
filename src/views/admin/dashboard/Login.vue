@@ -58,6 +58,7 @@ export default {
               title: "Selamat datang admin",
               showConfirmButton: true,
             }).then(() => {
+              sessionStorage.setItem('isAuth', 'true');
               this.$store.commit("setAuthentication", true);
               this.$router.push("admin");
             });

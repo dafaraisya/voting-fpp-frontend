@@ -52,6 +52,7 @@ export default {
                 this.location = "Beranda"
         },
         logout() {
+            sessionStorage.removeItem('isAuth');
             this.$store.commit("setAuthentication", false);
             // this.$router.push('../login');
             this.$router.push({name: "login"});
