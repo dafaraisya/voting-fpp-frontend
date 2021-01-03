@@ -59,6 +59,7 @@ export default {
       participants: [],
       candidates: [],
       announcement: [],
+      outline: {},
       year: 0,
       month: 0,
       date: 0,
@@ -245,7 +246,7 @@ export default {
         this.barOptions.xAxis.categories = name;
         this.barOptions.series[0].data = vote;
         this.barOptions.yAxis.title.text =
-          "663" + "/" + this.participants.length + " suara";
+          this.outline.participantVoted + "/" + this.participants.length + " suara";
       }, 1000);
     },
   },
@@ -271,6 +272,10 @@ export default {
         this.candidates = res.data.data;
       })
       .catch((err) => console.log(err));
+    axios
+      .get("http://pemira.fppundip.com:3000/api/v1/outline")
+      .then(res => (this.outline = res.data.data))
+      .catch(err => console.log(err));
   },
 };
 </script>
